@@ -1,0 +1,107 @@
+# This yaml file contains all supported scrapers and their status. The status' active key is False for a specific
+# scraper, that scraper will be skipped and no downloads will be attempted for that particular organization (and/or region)
+undp-global:
+  status:
+    active: false
+undp-africa:
+  status:
+    active: true
+undp-arab-states:
+  status:
+    active: false
+undp-asia-and-the-pacific:
+  status:
+    active: false
+undp-europe-and-the-commonwealth-of-independent-states:
+  status:
+    active: false
+undp-latin-america-and-the-caribbean:
+  status:
+    active: false
+who-global:
+  status:
+    active: false
+who-africa:
+  status:
+    active: false
+who-america-paho:
+  status:
+    active: false
+who-south-east-asia:
+  status:
+    active: false
+who-europe:
+  status:
+    active: false
+who-western-pacific:
+  status:
+    active: false
+who-eastern-mediterranean:
+  status:
+    active: false
+un-global:
+  status:
+    active: false
+worldbank-openknowledge:
+  status:
+    active: false
+worldbank-documents-and-reports:
+  status:
+    active: false
+unicef-global:
+  status:
+    active: false
+unicef-east-asia-and-pacific:
+  status:
+    active: false
+unicef-eastern-and-southern-africa:
+  status:
+    active: false
+unicef-middle-east-and-north-africa:
+  status:
+    active: false
+unicef-south-asia:
+  status:
+    active: false
+unicef-west-and-central-africa:
+  status:
+    active: false
+unaids-global:
+  status:
+    active: false
+unep-global:
+  status:
+    active: false
+unep-wedocs:
+  status:
+    active: false
+wfp-global:
+  status:
+    active: false
+unhabitat-global:
+  status:
+    active: false
+unwto-global:
+  status:
+    active: false
+ilo-global:
+  status:
+    active: false
+ilo-beirut:
+  status:
+    active: false
+ilo-central-america:
+  status:
+    active: false
+ilo-latin-america-and-the-caribbean:
+  status:
+    active: false
+ilo-philippines:
+  status:
+    active: false
+uncdf-global:
+  status:
+    active: false
+wipo-global:
+  status:
+    active: false

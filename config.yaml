@@ -1,0 +1,86 @@
+on_azure_jupyter_cloud: false  # If true, Azure jupyter cloud folder's path will be used, else, use local machine folder path
+general:
+  database:
+    sql_lite:
+      name: undp_data_futures_platform.db  # Name of the SQLite database file
+      path:  # Path to the SQLite database file from the root of the project (data/database/sql_lite). Customizable at will
+      - data
+      - database
+      - sql_lite
+      azure_path:  # Database path on Azure jupyter
+        - ../  # We move up one level. This is due to the current structure of the directories on Azure jupyter
+        - ../
+        - scraping-share
+        - database
+        - sql_lite
+  download_even_if_exist: false  # If true, will overwrite PDFs on the disk and update metadata in the documents' table
+  azure_downloaded_pdfs_relative_path:  # Path to the directories of downloaded PDFs (On Azure). Customizable at will
+    - ../  # We move up one level. This is due to the current structure of the directories on Azure jupyter
+    - ../
+    - scraping-share
+  local_downloaded_pdfs_relative_path:  # Path to the directories of downloaded PDFs (On local). Customizable at will
+  - data
+  - downloads
+  - pdfs
+  file_types: # list of file types (extensions) to download
+    - pdf
+    - doc
+    - docx
+  documents_table: documents  # Name of the table containing meta of PDFs
+  organizations_table: organizations  # Name of the table containing list of organizations of interest
+  sessions_table: sessions  # Name of the table containing list of current and previous sessions
+  temp_documents_table: temp_documents_table  # Temporary table used to store documents' metadata before downloading them
+  temp_publications_urls_table: temp_publications_urls  # # Temporary table used to store publications' metadata before retrieving PDFs links from each of them
+  max_document_links_chunk_size: 500  # Maximum number of PDFs links to keep in memory at a time. Control memory usage
+  max_publication_urls_chunk_size: 500 # Maximum number of publications urls to keep in memory at a time. Control memory usage
+  request_time_out_in_second: 60  # In seconds: Maximum waiting for the response from the initial connection to the server using http request
+  retry_download_in_next_session: true  # If false, will not attempt to download a PDFs that failed to be downloaded during previous sessions. (field `error`=1)
+  max_request_attempt: 3  # In case of error code `429` (Too Many Requests), maximum number of times the same request should be retried
+  max_waiting_time_sec: 900  # After each error `429`, the waiting will increment by a step of `Max_request_attempt`/ `max_waiting_time_sec`. So, `max_waiting_time_sec` is the maximum amount of seconds of waiting before next attempt. After that, it will exit the retry loop
+  save_log_events: true  # If false, will not any errors, warning, or info in the log events file
+  allow_parallel_downloads: true  # Allow download of several documents simultaneously
+  max_concurrent_downloads: 3  # Maximum number of document to be downloaded simultaneously
+  request_default_headers:  # Default value to be used for all http requests using Request package
+    - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3
+  un_languages:  # Different format of common languages used for publications. Some publications used code2 format, others code3, and so on
+    code2:
+    - ar
+    - zh
+    - en
+    - fr
+    - ru
+    - es
+    code3:
+    - ARB
+    - CHN
+    - ENG
+    - FRA
+    - RUS
+    - SPA
+    lang_dict:
+      "FRANÇAIS": FRENCH
+      "FRANÇAISE": FRENCH
+      ar: ARABIC
+      arabic: ARABIC
+      arb: ARABIC
+      chinese: CHINESE
+      chn: CHINESE
+      en: ENGLISH
+      eng: ENGLISH
+      english: ENGLISH
+      es: SPANISH
+      fr: FRENCH
+      fra: FRENCH
+      french: FRENCH
+      ru: RUSSIAN
+      rus: RUSSIAN
+      russian: RUSSIAN
+      spa: SPANISH
+      spanish: SPANISH
+      zh: CHINESE
+      "Español": SPANISH
+      "Русский": RUSSIAN
+      "中文": CHINESE
+      "عربي": ARABIC
+      German: GERMAN
+      Deutsch: GERMAN
